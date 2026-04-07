@@ -10,7 +10,7 @@ function walkDir(dir) {
         } else if (fullPath.endsWith('.html')) {
             let content = fs.readFileSync(fullPath, 'utf8');
             if (content.includes('support@goldsave.app')) {
-                content = content.replace(/support@goldsave\.app/g, 'support@jzzhelp.myhoness.com');
+                content = content.replace(/support@goldsave\.app/g, 'support@myhoness.com');
                 fs.writeFileSync(fullPath, content, 'utf8');
                 console.log('Updated:', fullPath);
             }
