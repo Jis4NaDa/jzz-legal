@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "3R5S925BYN.com.jzz.app",
+        "paths": [
+          "/app/*",
+          "/app",
+          "*"
+        ]
+      }
+    ]
+  }
+}
