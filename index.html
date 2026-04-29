@@ -1894,8 +1894,25 @@
                 a.href = a.href.replace(/([\\/])[a-z-]+\.html$/, '$1' + lang + '.html');
             });
         }
+        // Initialize language from URL (?lang=en) or Hash (#lang=en), fallback to 'zh'
+        const urlParams = new URLSearchParams(window.location.search);
+        let defaultLang = urlParams.get('lang');
+        
+        if (!defaultLang && window.location.hash.startsWith('#lang=')) {
+            defaultLang = window.location.hash.split('=')[1];
+        }
+        
+        defaultLang = defaultLang || 'zh';
 
-        changeLanguage('zh');
+        // Sync the dropdown menu with the initialized language
+        const langDropdown = document.getElementById('langSwitch');
+        if (langDropdown && Array.from(langDropdown.options).some(opt => opt.value === defaultLang)) {
+            langDropdown.value = defaultLang;
+        } else {
+            defaultLang = 'zh'; // Fallback if invalid language provided
+        }
+
+        changeLanguage(defaultLang);
     </script>
 </body>
 </html>
