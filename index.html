@@ -3,52 +3,1899 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>金赞赞 - 智能贵金属资产管家</title>
+    <title>金赞赞 - App Store 宣传图画布</title>
     <style>
-        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f8f9fa; color: #333; }
-        .hero { text-align: center; padding: 100px 20px; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; }
-        .hero h1 { font-size: 3em; margin-bottom: 20px; }
-        .hero p { font-size: 1.2em; opacity: 0.9; max-width: 600px; margin: 0 auto 40px auto; line-height: 1.6; }
-        .btn { display: inline-block; padding: 15px 30px; background-color: #ffd700; color: #333; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.1em; transition: transform 0.2s; }
-        .btn:hover { transform: scale(1.05); }
-        .features { display: flex; justify-content: center; flex-wrap: wrap; padding: 60px 20px; gap: 40px; max-width: 1000px; margin: 0 auto; }
-        .feature-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); width: 280px; text-align: center; }
-        .feature-card h3 { color: #2a5298; }
-        footer { text-align: center; padding: 40px 20px; color: #666; font-size: 0.9em; border-top: 1px solid #eee; }
-        .links a { color: #666; text-decoration: none; margin: 0 10px; }
-        .links a:hover { text-decoration: underline; }
+        :root {
+            --ink: #fffaf0;
+            --paper: #0a0a0c;
+            --paper-soft: #121214;
+            --gold: #c9952f;
+            --gold-deep: #7a4f12;
+            --green: #258f72;
+            --blue: #3d72a8;
+            --plum: #8e557b;
+            --black: #050505;
+            --white: #121214;
+            --muted: rgba(255, 250, 240, 0.68);
+            --shadow: 0 44px 100px rgba(0, 0, 0, 0.5);
+            --glass-bg: rgba(20, 20, 24, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        * { box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--paper);
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background:
+                linear-gradient(90deg, rgba(201,149,47,0.04) 1px, transparent 1px),
+                linear-gradient(180deg, rgba(201,149,47,0.03) 1px, transparent 1px),
+                var(--paper);
+            background-size: 44px 44px;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+            line-height: 1.2;
+            letter-spacing: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at top right, rgba(122,79,18,0.15), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(36,76,116,0.15), transparent 50%);
+            z-index: -1;
+        }
+
+        a { color: inherit; }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 18px clamp(18px, 4vw, 48px);
+            background: rgba(10, 10, 12, 0.7);
+            border-bottom: 1px solid var(--glass-border);
+            backdrop-filter: saturate(180%) blur(24px);
+            -webkit-backdrop-filter: saturate(180%) blur(24px);
+            box-shadow: 0 12px 30px -20px rgba(0,0,0,0.5);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .app-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 10px 26px rgba(122, 79, 18, 0.26);
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-switch,
+        .jump-link {
+            min-height: 40px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            color: var(--ink);
+            border-radius: 8px;
+            padding: 0 14px;
+            font-size: 15px;
+            font-weight: 700;
+            backdrop-filter: blur(12px);
+        }
+
+        .jump-link {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .page-intro {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 46px clamp(18px, 5vw, 54px) 28px;
+        }
+
+        .page-intro h1 {
+            max-width: 900px;
+            margin: 0;
+            font-size: clamp(46px, 8vw, 104px);
+            line-height: 0.96;
+            letter-spacing: -0.014em;
+        }
+
+        .page-intro h1::before {
+            content: "";
+            display: block;
+            width: 64px;
+            height: 4px;
+            margin-bottom: 22px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-deep));
+            border-radius: 2px;
+        }
+
+        .page-intro p {
+            max-width: 680px;
+            margin: 22px 0 0;
+            color: var(--muted);
+            font-size: clamp(18px, 2.4vw, 28px);
+            font-weight: 650;
+            line-height: 1.38;
+        }
+
+        .deck {
+            display: grid;
+            gap: 34px;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 18px clamp(14px, 4vw, 44px) 64px;
+        }
+
+        .promo-slide {
+            position: relative;
+            min-height: min(980px, calc(100svh - 86px));
+            display: flex;
+            flex-direction: column;
+            gap: clamp(34px, 5vw, 64px);
+            overflow: hidden;
+            padding: clamp(40px, 6vw, 80px) clamp(34px, 6vw, 72px) clamp(64px, 8vw, 110px);
+            color: var(--ink);
+            background: var(--white);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+            isolation: isolate;
+        }
+
+        .promo-slide::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            background:
+                radial-gradient(circle at 20% 12%, rgba(255,255,255,0.08), transparent 48%),
+                radial-gradient(circle at 80% 90%, rgba(0,0,0,0.4), transparent 50%),
+                var(--slide-bg, linear-gradient(135deg, #1f1b13, #3a2a11));
+        }
+
+        .promo-slide::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0 0;
+            height: 28%;
+            z-index: -1;
+            background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0));
+        }
+
+        .slide-hero { --slide-bg: linear-gradient(135deg, #1c150c 0%, #30220c 54%, #0a0a0c 100%); }
+        .slide-market { --slide-bg: linear-gradient(135deg, #101c18 0%, #15382b 54%, #0a0a0c 100%); }
+        .slide-alert { --slide-bg: linear-gradient(135deg, #1f170b 0%, #4a2c06 55%, #0a0a0c 100%); }
+        .slide-ai { --slide-bg: linear-gradient(135deg, #101924 0%, #17324c 54%, #0a0a0c 100%); }
+        .slide-insights { --slide-bg: linear-gradient(135deg, #131518 0%, #202732 54%, #0a0a0c 100%); }
+        .slide-diagnosis { --slide-bg: linear-gradient(135deg, #241620 0%, #3b1d30 56%, #0a0a0c 100%); }
+        .slide-theme { --slide-bg: linear-gradient(135deg, #181524 0%, #291e42 50%, #0a0a0c 100%); }
+
+        .slide-copy {
+            position: relative;
+            z-index: 4;
+            max-width: 100%;
+        }
+
+        .slide-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            min-height: 72px;
+            margin-bottom: 36px;
+            padding: 0 36px;
+            border: 1px solid var(--glass-border);
+            border-radius: 999px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            color: var(--ink);
+            font-size: clamp(26px, 3vw, 38px);
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .slide-kicker::before {
+            content: "";
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--kicker-dot, var(--gold));
+            box-shadow:
+                0 0 0 5px var(--kicker-halo, rgba(201,149,47,0.28)),
+                0 0 0 10px rgba(0,0,0,0.06);
+        }
+
+        /* Per-slide dot color anchoring each slide to its gradient identity */
+        .slide-hero      { --kicker-dot: #c9952f; --kicker-halo: rgba(201,149,47,0.30); }
+        .slide-market    { --kicker-dot: #1d6b55; --kicker-halo: rgba(29,107,85,0.28); }
+        .slide-alert     { --kicker-dot: #b8862e; --kicker-halo: rgba(184,134,46,0.28); }
+        .slide-ai        { --kicker-dot: #244c74; --kicker-halo: rgba(36,76,116,0.26); }
+        .slide-insights  { --kicker-dot: #344052; --kicker-halo: rgba(52,64,82,0.26); }
+        .slide-diagnosis { --kicker-dot: #6a405c; --kicker-halo: rgba(106,64,92,0.26); }
+        .slide-theme     { --kicker-dot: #4a3870; --kicker-halo: rgba(74,56,112,0.26); }
+
+        .slide-copy h2 {
+            margin: 0;
+            font-size: clamp(56px, 8vw, 104px);
+            line-height: 0.9;
+            letter-spacing: -0.026em;
+            font-weight: 900;
+            color: var(--ink);
+            word-break: keep-all;
+            overflow-wrap: normal;
+        }
+
+        .slide-copy p {
+            max-width: 560px;
+            margin: 24px 0 0;
+            color: var(--ink);
+            font-size: clamp(22px, 2.4vw, 30px);
+            line-height: 1.26;
+            font-weight: 700;
+            word-break: keep-all;
+        }
+
+        .device-stage {
+            align-self: end;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: clamp(22px, 4vw, 58px);
+            flex: 1 1 auto;
+            min-height: 0;
+            padding-top: 22px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .device-stage.align-right {
+            justify-content: flex-end;
+        }
+
+        .iphone {
+            position: relative;
+            flex: 0 0 auto;
+            width: clamp(250px, 30vw, 400px);
+            aspect-ratio: 9 / 19.5;
+            padding: 8px; /* Reduced from 14px to make border thinner */
+            border-radius: 46px; /* Adjusted to match the thinner border */
+            /* Premium metallic gold gradient for the phone bezel */
+            background: linear-gradient(135deg, #fceb98 0%, #b8862e 15%, #2a1c0d 45%, #110b05 65%, #c9952f 85%, #fceb98 100%);
+            box-shadow:
+                inset 0 0 0 1px rgba(255,255,255,0.4),
+                inset 0 0 0 2px rgba(0,0,0,0.8),
+                0 42px 90px rgba(0, 0, 0, 0.8),
+                0 0 40px rgba(201,149,47,0.15); /* Soft gold ambient glow */
+            transform: translateZ(0);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .iphone.secondary { animation-delay: -3s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+            50% { transform: translateY(-16px) rotate(var(--rot, 0deg)); }
+        }
+
+        .iphone.large {
+            width: clamp(300px, 36vw, 480px);
+        }
+
+        .iphone.tilt-left {
+            transform: rotate(-4deg);
+        }
+
+        .iphone.tilt-right {
+            transform: rotate(4deg);
+        }
+
+        .iphone::before {
+            content: "";
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            width: 108px;
+            height: 31px;
+            transform: translateX(-50%);
+            background: #000;
+            border-radius: 18px;
+            z-index: 3;
+            box-shadow: inset 0 0 2px rgba(255,255,255,0.18);
+        }
+
+        .iphone img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 46px;
+            object-fit: cover;
+            object-position: top;
+            background: #111;
+            /* High-quality downscaling for @3x retina phone screenshots
+               (1179x2556 -> ~410px). Browser default bilinear introduces
+               aliasing on thin design strokes (e.g. the gold trend-wave on
+               the assets summary card). high-quality forces Lanczos/bicubic
+               in modern Chromium; -webkit-optimize-contrast covers Safari
+               and older Chrome. */
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
+        }
+
+        .iphone::after {
+            content: "";
+            position: absolute;
+            left: 8%;
+            right: 8%;
+            bottom: -28px;
+            height: 38px;
+            background: radial-gradient(closest-side, rgba(15,13,10,0.32), rgba(15,13,10,0));
+            filter: blur(2px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .iphone.secondary {
+            width: clamp(205px, 23vw, 315px);
+            margin-bottom: clamp(46px, 8vw, 96px);
+            opacity: 0.94;
+        }
+
+        .slide-hero .iphone.secondary,
+        .slide-ai .iphone.secondary {
+            opacity: 0.72;
+        }
+
+
+        footer {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 clamp(18px, 4vw, 44px) 56px;
+            color: rgba(21,17,10,0.56);
+            font-size: 15px;
+            font-weight: 650;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin: 14px 0 0;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--gold-deep);
+        }
+
+        [dir="rtl"] .topbar {
+            direction: rtl;
+        }
+
+        [dir="rtl"] .device-stage {
+            direction: ltr;
+        }
+
+        @media (min-width: 721px) {
+            .promo-slide {
+                min-height: 980px;
+            }
+
+            .slide-copy {
+                max-width: 860px;
+            }
+
+            .slide-copy h2 {
+                max-width: 920px;
+                font-size: clamp(64px, 10vw, 120px);
+            }
+
+            .slide-copy p {
+                max-width: 620px;
+                font-size: clamp(24px, 3.8vw, 34px);
+            }
+
+            .device-stage {
+                justify-content: center;
+                align-self: center;
+                padding-top: 0;
+            }
+
+            .iphone.large {
+                width: clamp(300px, 40vw, 410px);
+            }
+
+            .iphone.secondary {
+                width: clamp(210px, 28vw, 300px);
+            }
+
+            .slide-hero .iphone.secondary {
+                display: none;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .topbar {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .controls {
+                width: 100%;
+            }
+
+            .lang-switch {
+                flex: 1;
+            }
+
+            .jump-link {
+                display: none;
+            }
+
+            .page-intro {
+                padding-top: 32px;
+            }
+
+            .promo-slide {
+                min-height: 860px;
+                padding: 28px 22px;
+            }
+
+            .slide-copy h2 {
+                font-size: clamp(46px, 14vw, 76px);
+            }
+
+            .slide-copy p {
+                font-size: clamp(20px, 6vw, 30px);
+            }
+
+            .device-stage {
+                flex-wrap: nowrap;
+                gap: 12px;
+            }
+
+            .iphone,
+            .iphone.large {
+                width: min(78vw, 350px);
+            }
+
+            .iphone.secondary {
+                display: none;
+            }
+        }
+
+        /* ----- AI 引文卡（覆盖在 AI/Insights/Tinjauan pembelian slide 的 phone 上） -----
+           解决「截图里 AI 生成的密文太多读不下去」的问题：把核心 AI 输出抽
+           成 1 句话编辑式引文，phone 退为产品语境，让卡片承担传达任务。 */
+        .ai-quote-card {
+            position: absolute;
+            z-index: 5;
+            width: clamp(260px, 26vw, 360px);
+            padding: 28px 30px 24px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border-radius: 12px;
+            color: var(--ink);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+            animation: float 6s ease-in-out infinite reverse;
+        }
+
+        .ai-quote-card::before {
+            content: "“";
+            position: absolute;
+            top: -28px;
+            left: 16px;
+            font-family: Georgia, "Source Han Serif SC", "Times New Roman", serif;
+            font-size: 110px;
+            line-height: 1;
+            color: var(--gold);
+            font-weight: 700;
+            text-shadow: 0 4px 20px rgba(201,149,47,0.4);
+        }
+
+        .ai-quote-card .quote {
+            margin: 0 0 18px;
+            font-size: clamp(17px, 1.6vw, 21px);
+            line-height: 1.36;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .ai-quote-card .meta {
+            margin: 0;
+            padding-top: 12px;
+            border-top: 1px solid var(--glass-border);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: rgba(255, 250, 240, 0.6);
+        }
+
+        .slide-ai .ai-quote-card {
+            bottom: 8%;
+            left: 4%;
+            transform: rotate(-2.4deg);
+        }
+
+        .slide-insights .ai-quote-card {
+            top: 14%;
+            right: 4%;
+            transform: rotate(2.2deg);
+        }
+
+        .slide-diagnosis .ai-quote-card {
+            bottom: 10%;
+            left: 5%;
+            transform: rotate(-1.6deg);
+        }
+
+        /* =========================================
+           AI Overlay Redesign (Screenshot + Glass Blur)
+           ========================================= */
+        .ai-overlay-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 46px; /* Matches .iphone border-radius */
+            overflow: hidden;
+            background: #111;
+        }
+        
+        .ai-overlay-container img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            /* Enhance image rendering for downscaling */
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
+        }
+
+        /* Frosted glass block to censor/blur text on screenshots */
+        .ai-blur-block {
+            position: absolute;
+            background: rgba(10, 8, 5, 0.45);
+            backdrop-filter: blur(16px) saturate(160%);
+            -webkit-backdrop-filter: blur(16px) saturate(160%);
+            border: 1px solid rgba(201, 149, 47, 0.25);
+            border-radius: 20px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        /* Glowing scanner line */
+        .ai-blur-block::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            box-shadow: 0 0 16px var(--gold);
+            animation: aiScan 3.5s infinite ease-in-out;
+            z-index: 3;
+        }
+        
+        @keyframes aiScan {
+            0% { top: 0; opacity: 0; }
+            15% { opacity: 1; }
+            85% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        /* AI Processing Icon & Visualization */
+        .ai-processing-hub {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .ai-processing-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px; height: 56px;
+            background: radial-gradient(circle, rgba(201,149,47,0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            border: 1px solid rgba(201, 149, 47, 0.3);
+            box-shadow: 0 0 20px rgba(201, 149, 47, 0.2);
+            animation: aiPulse 2s infinite alternate ease-in-out;
+        }
+        
+        .ai-processing-icon svg {
+            width: 28px; height: 28px;
+            color: var(--gold);
+        }
+
+        @keyframes aiPulse {
+            0% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 10px rgba(201, 149, 47, 0.1); }
+            100% { transform: scale(1.05); opacity: 1; box-shadow: 0 0 30px rgba(201, 149, 47, 0.4); }
+        }
+
+        .ai-data-lines {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+        }
+        
+        .ai-data-lines i {
+            display: block;
+            height: 4px;
+            background: rgba(201, 149, 47, 0.6);
+            border-radius: 2px;
+            animation: widthPulse 1.5s infinite alternate ease-in-out;
+        }
+        
+        .ai-data-lines i:nth-child(1) { width: 40px; animation-delay: 0s; }
+        .ai-data-lines i:nth-child(2) { width: 64px; animation-delay: 0.3s; }
+        .ai-data-lines i:nth-child(3) { width: 32px; animation-delay: 0.6s; }
+        
+        @keyframes widthPulse {
+            0% { transform: scaleX(0.85); background: rgba(201, 149, 47, 0.3); }
+            100% { transform: scaleX(1.15); background: rgba(201, 149, 47, 0.9); }
+        }
+
+        /* Composite Graphic for Pre-rendered AI Designs */
+        .composite-graphic {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 5%;
+            animation: float 6s ease-in-out infinite;
+        }
+        .composite-graphic img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            mix-blend-mode: screen;
+            filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.4));
+        }
+
+        /* Adjustments for Slide 4 (AI Review) Image */
+        .slide-ai .composite-graphic img {
+            transform: scale(1.6) translateY(15px);
+            transform-origin: center top;
+        }
+
+        /* Adjustments for Slide 5 (AI Diagnosis) Image - Standard Phone Frame */
+        .slide-insights .iphone img {
+            background-color: #12141a; /* Blend with the top dark background of the image */
+        }
+
+        /* AI Source Aggregation (News to Center) */
+        .ai-source-aggregation {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ai-aggregation-svg {
+            width: 100%;
+            height: 100%;
+            min-width: 200px;
+        }
+        .agg-flow-line {
+            stroke: rgba(201,149,47, 0.5);
+            stroke-width: 1.5;
+            stroke-dasharray: 4 4;
+            animation: aggFlow 2s linear infinite;
+        }
+        @keyframes aggFlow {
+            to { stroke-dashoffset: -16; }
+        }
+        .agg-node {
+            fill: rgba(10,8,5,0.85);
+            stroke: rgba(201,149,47,0.6);
+            stroke-width: 1px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+        }
+        .agg-text {
+            fill: var(--gold);
+            font-size: 8px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            text-anchor: middle;
+            dominant-baseline: central;
+        }
+        .ai-processing-icon-svg {
+            animation: aiPulse 2s infinite alternate ease-in-out;
+        }
+
+        /* ===== Featured AI card (mockup-review) ===== */
+        .pm-featured {
+            margin: 4px 2px;
+            padding: 14px 16px 14px;
+            border-radius: 14px;
+            background:
+                linear-gradient(155deg, rgba(36,76,116,0.66), rgba(36,76,116,0.18)),
+                linear-gradient(180deg, rgba(255,250,240,0.04), rgba(255,250,240,0.02));
+            border: 1px solid rgba(36,76,116,0.55);
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.30);
+        }
+        .pm-featured .pm-featured-head {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--gold);
+            letter-spacing: 0.04em;
+        }
+        .pm-featured .pm-featured-head svg { width: 13px; height: 13px; }
+        .pm-featured .pm-featured-head .pm-date {
+            margin-left: auto;
+            opacity: 0.55;
+            font-weight: 700;
+            font-size: 10px;
+            color: rgba(255,250,240,0.65);
+        }
+        .pm-featured .pm-discuss {
+            margin-top: 2px;
+            align-self: flex-end;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 10px;
+            font-weight: 800;
+            background: rgba(201,149,47,0.20);
+            color: var(--gold);
+            border: 1px solid rgba(201,149,47,0.30);
+        }
+        .pm-featured .pm-discuss svg { width: 11px; height: 11px; }
+
+        /* ===== Price ticker (mockup-review top) ===== */
+        .pm-ticker {
+            margin: 0 4px;
+            padding: 8px 14px 6px;
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+        .pm-ticker .pm-price {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--gold);
+            letter-spacing: -0.02em;
+        }
+        .pm-ticker .pm-unit {
+            font-size: 10px;
+            color: rgba(255,250,240,0.45);
+        }
+        .pm-ticker .pm-change {
+            margin-left: auto;
+            font-size: 11px;
+            font-weight: 800;
+            color: #4ade80;
+        }
+        .pm-tabs {
+            display: flex;
+            gap: 14px;
+            padding: 4px 18px 8px;
+            font-size: 10px;
+            font-weight: 800;
+            color: rgba(255,250,240,0.42);
+            border-bottom: 0.5px solid rgba(255,255,255,0.04);
+        }
+        .pm-tabs .pm-tab-active {
+            color: var(--gold);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 2px;
+            margin-bottom: -2px;
+        }
+
+        /* ===== Diagnosis panel (mockup-report) ===== */
+        .pm-panel {
+            margin: 0 4px;
+            padding: 14px 16px;
+            border-radius: 14px;
+            background: rgba(255,250,240,0.04);
+            border: 1px solid rgba(255,250,240,0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .pm-panel .pm-panel-head {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,250,240,0.08);
+            font-size: 12.5px;
+            font-weight: 800;
+            color: var(--gold);
+        }
+        .pm-panel .pm-panel-head svg { width: 14px; height: 14px; }
+        .pm-panel .pm-panel-head .pm-close {
+            margin-left: auto;
+            opacity: 0.5;
+            font-size: 13px;
+            color: rgba(255,250,240,0.5);
+        }
+        .pm-panel .pm-asset {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            padding: 6px 10px 8px;
+            background: rgba(201,149,47,0.06);
+            border-radius: 8px;
+        }
+        .pm-panel .pm-asset .pm-asset-main {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--gold);
+        }
+        .pm-panel .pm-asset .pm-asset-sub {
+            font-size: 10px;
+            font-weight: 700;
+            opacity: 0.65;
+            color: rgba(255,250,240,0.65);
+        }
+        .pm-panel .pm-section {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .pm-panel .pm-section .pm-section-label {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--gold);
+            opacity: 0.85;
+        }
+
+        /* ===== Tab bar (bottom) ===== */
+        .pm-tabbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 12px 12px 22px;
+            border-top: 1px solid rgba(255,250,240,0.06);
+            flex-shrink: 0;
+        }
+        .pm-tabbar .pm-tab {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            color: rgba(255,250,240,0.40);
+            min-width: 38px;
+        }
+        .pm-tabbar .pm-tab svg { width: 17px; height: 17px; }
+        .pm-tabbar .pm-tab.pm-tab-active { color: var(--gold); }
+        .pm-tabbar .pm-fab {
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #d8a544, #7a4f12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a1207;
+            font-size: 24px;
+            font-weight: 300;
+            margin-top: -16px;
+            box-shadow: 0 4px 14px rgba(201,149,47,0.50);
+        }
+
+        /* ===== Chat input bar ===== */
+        .pm-chatinput {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px 14px;
+            flex-shrink: 0;
+        }
+        .pm-chatinput .pm-input-pill {
+            flex: 1;
+            height: 36px;
+            border-radius: 18px;
+            background: rgba(255,250,240,0.06);
+            border: 1px solid rgba(255,250,240,0.08);
+            display: flex;
+            align-items: center;
+            padding: 0 14px;
+        }
+        .pm-chatinput .pm-input-pill .pm-line {
+            width: 60%;
+            opacity: 0.32;
+        }
+        .pm-chatinput .pm-send {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #d8a544, #7a4f12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a1207;
+            box-shadow: 0 3px 10px rgba(201,149,47,0.30);
+        }
+        .pm-chatinput .pm-send svg { width: 16px; height: 16px; }
+
+        /* ===== "AI nebula" atmospheric layer behind phones (slide-4/6) ===== */
+        .slide-ai .device-stage::before,
+        .slide-diagnosis .device-stage::before {
+            content: "";
+            position: absolute;
+            inset: -10% -8%;
+            background:
+                radial-gradient(ellipse 50% 35% at 25% 30%, var(--nebula-1, rgba(201,149,47,0.22)), transparent 65%),
+                radial-gradient(ellipse 60% 50% at 75% 70%, var(--nebula-2, rgba(36,76,116,0.30)), transparent 70%);
+            filter: blur(28px);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .slide-ai { --nebula-1: rgba(201,149,47,0.30); --nebula-2: rgba(36,76,116,0.40); }
+        .slide-diagnosis { --nebula-1: rgba(216,165,201,0.30); --nebula-2: rgba(74,42,68,0.40); }
+
+        .slide-ai .device-stage,
+        .slide-diagnosis .device-stage {
+            position: relative;
+        }
+        .slide-ai .device-stage > *,
+        .slide-diagnosis .device-stage > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Floating star particles around AI phones */
+        .slide-ai .device-stage::after,
+        .slide-diagnosis .device-stage::after {
+            content: "✦  ✦   ·   ✦  ·  ✦";
+            position: absolute;
+            top: 8%;
+            left: 0;
+            right: 0;
+            pointer-events: none;
+            font-size: 14px;
+            color: rgba(201,149,47,0.55);
+            text-shadow: 0 0 10px rgba(201,149,47,0.6);
+            letter-spacing: 6vw;
+            z-index: 0;
+            font-weight: 800;
+        }
+
+        /* Mobile: skip mockup */
+        @media (max-width: 720px) {
+            .phone-mockup { display: none; }
+        }
+        @media print {
+            .slide-ai .device-stage::before,
+            .slide-diagnosis .device-stage::before { filter: blur(20px); opacity: 0.6; }
+            .slide-ai .device-stage::after,
+            .slide-diagnosis .device-stage::after { text-shadow: none; opacity: 0.5; }
+        }
+
+
+        /* ---------------------------------------------------------------
+           Feature-spec overlay cards (slide-4 brief/chat, slide-5 hub,
+           slide-6 report). Art-led design — each card pairs a large SVG
+           illustration with a minimal caption. The illustration carries
+           the meaning; copy stays at title + 1 small subline.
+        --------------------------------------------------------------- */
+        .feature-card {
+            position: absolute;
+            z-index: 5;
+            width: clamp(240px, 26vw, 290px);
+            padding: 18px 20px 16px;
+            background: #fffaf0;
+            border: 1px solid rgba(21,17,10,0.16);
+            border-radius: 8px;
+            color: var(--ink);
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,0.7),
+                0 32px 70px -22px rgba(60,39,7,0.34),
+                0 4px 14px rgba(60,39,7,0.08);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card .fc-art {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 240 / 150;
+            color: var(--ink);
+        }
+
+        .feature-card .fc-caption {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(21,17,10,0.10);
+        }
+
+        .feature-card .fc-caption-title {
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: -0.005em;
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .feature-card .fc-caption-title::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 0 2px rgba(201,149,47,0.28);
+            flex: 0 0 auto;
+        }
+
+        .feature-card .fc-caption-sub {
+            margin-top: 6px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+            color: rgba(21,17,10,0.55);
+        }
+
+        /* per-slide positioning */
+        .slide-ai .feature-card-brief {
+            bottom: 10%;
+            left: 5%;
+            transform: rotate(-2.4deg);
+        }
+        .slide-ai .feature-card-chat {
+            top: 22%;
+            right: 4%;
+            transform: rotate(2deg);
+        }
+        .slide-diagnosis .feature-card-report {
+            bottom: 8%;
+            left: 5%;
+            transform: rotate(-1.8deg);
+        }
+
+        /* slide-5 hub: refactor existing .ai-quote-card into the same art-led shape */
+        .slide-insights .ai-quote-card {
+            padding: 18px 20px 16px;
+        }
+        .slide-insights .ai-quote-card .fc-art {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 240 / 150;
+        }
+        .slide-insights .ai-quote-card .fc-caption {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(21,17,10,0.10);
+        }
+        .slide-insights .ai-quote-card .fc-caption-title {
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .slide-insights .ai-quote-card .fc-caption-title::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 0 2px rgba(201,149,47,0.28);
+            flex: 0 0 auto;
+        }
+        .slide-insights .ai-quote-card .fc-caption-sub {
+            margin-top: 6px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+            color: rgba(21,17,10,0.55);
+        }
+        /* drop the obsolete decorative quote-mark on insights */
+        .slide-insights .ai-quote-card::before { content: none; }
+
+        /* hide on mobile */
+        @media (max-width: 720px) {
+            .feature-card { display: none; }
+        }
+
+
+        @media (max-width: 720px) {
+            .ai-quote-card {
+                display: none;
+            }
+        }
+
+        @media print {
+            /* Force CSS backgrounds (slide gradients) to render in PDF.
+               Without this, Chrome's "Background graphics" toggle defaults
+               OFF and the slides print with no gradient → flat white. */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            /* A4 portrait matches App Store screenshot aspect (taller than
+               wide). Landscape was crushing phone-tall content into a short
+               page, causing the iPhone mock to overflow upward into the
+               title text. */
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            html, body {
+                margin: 0;
+                padding: 0;
+                background: var(--paper);
+            }
+
+            .topbar,
+            .page-intro,
+            footer {
+                display: none;
+            }
+
+            .deck {
+                display: block;
+                padding: 0;
+                max-width: none;
+                gap: 0;
+            }
+
+            .promo-slide {
+                page-break-after: always;
+                page-break-inside: avoid;
+                height: 100vh;
+                min-height: 100vh;
+                margin: 0;
+                padding: 36px 40px 56px;
+                gap: 26px;
+                border: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .promo-slide:last-child {
+                page-break-after: auto;
+            }
+
+            /* Compact typography to fit A4 portrait (~794×1123 px) */
+            .feature-card {
+                width: clamp(200px, 24vw, 280px);
+                padding: 14px 18px 12px;
+            }
+            .feature-card .fc-row {
+                padding: 6px 0;
+                font-size: 14px;
+            }
+            .feature-card .fc-asset .fc-asset-main {
+                font-size: 16px;
+            }
+
+            .slide-copy h2 {
+                font-size: 56px;
+                line-height: 0.96;
+            }
+            .slide-copy p {
+                font-size: 22px;
+                margin-top: 14px;
+            }
+            .slide-kicker {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+
+            /* Scale phones down so they fit page height with text above */
+            .iphone.large {
+                width: 320px;
+            }
+            .iphone:not(.large) {
+                width: 220px;
+            }
+            .iphone.secondary {
+                margin-bottom: 0;
+            }
+
+        }
     </style>
 </head>
 <body>
+    <svg style="display:none" aria-hidden="true">
+        <symbol id="i-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 17 L8 12 L12 14 L15 9 L21 5"/>
+            <path d="M21 10 L21 5 L16 5"/>
+        </symbol>
+        <symbol id="i-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12 L7 12 L9 7 L12 17 L15 10 L17 12 L21 12"/>
+        </symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M3 12 L21 12"/>
+            <path d="M12 3 C9 7 9 17 12 21 M12 3 C15 7 15 17 12 21"/>
+        </symbol>
+        <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="16" rx="2"/>
+            <path d="M3 10 L21 10 M8 3 L8 7 M16 3 L16 7"/>
+            <circle cx="12" cy="15" r="1.5" fill="currentColor" stroke="none"/>
+        </symbol>
+        <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 7 C3 6 4 5 5 5 L19 5 C20 5 21 6 21 7 L21 18 C21 19 20 20 19 20 L5 20 C4 20 3 19 3 18 Z"/>
+            <path d="M16 13 L20 13"/>
+            <circle cx="17.5" cy="13" r="1" fill="currentColor" stroke="none"/>
+        </symbol>
+        <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 3 L15 3 L19 7 L19 21 L6 21 Z"/>
+            <path d="M15 3 L15 7 L19 7 M9 12 L15 12 M9 16 L13 16"/>
+        </symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6 C4 5 5 4 6 4 L18 4 C19 4 20 5 20 6 L20 14 C20 15 19 16 18 16 L9 16 L5 20 L5 16 C4 16 4 15 4 14 Z"/>
+        </symbol>
+        <symbol id="i-sparkle" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+            <path d="M12 3 L13.4 10.6 L21 12 L13.4 13.4 L12 21 L10.6 13.4 L3 12 L10.6 10.6 Z"/>
+        </symbol>
+        <symbol id="i-hub" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="6" r="2.5"/>
+            <circle cx="6" cy="18" r="2.5"/>
+            <circle cx="18" cy="18" r="2.5"/>
+            <path d="M11.2 8.4 L7 15.7 M12.8 8.4 L17 15.7 M9 18 L15 18"/>
+        </symbol>
+        <symbol id="i-person" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="3.5"/>
+            <path d="M5 20 C 5 16 8 14 12 14 C 16 14 19 16 19 20"/>
+        </symbol>
+        <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18 L15 18 M10 21 L14 21"/>
+            <path d="M12 3 C 8 3 6 6 6 9 C 6 11 7 13 9 14 L 9 17 L 15 17 L 15 14 C 17 13 18 11 18 9 C 18 6 16 3 12 3 Z"/>
+        </symbol>
+        <symbol id="i-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="9" cy="14" rx="6" ry="2.5"/>
+            <path d="M3 14 L 3 17 C 3 18.5 5.5 19.5 9 19.5 C 12.5 19.5 15 18.5 15 17 L 15 14"/>
+            <ellipse cx="15" cy="8" rx="6" ry="2.5"/>
+            <path d="M9 8 L 9 11 C 9 12.5 11.5 13.5 15 13.5 C 18.5 13.5 21 12.5 21 11 L 21 8"/>
+        </symbol>
+    </svg>
+    <header class="topbar">
+        <div class="brand">
+            <img src="./home/app_icon.png" class="app-logo" alt="金赞赞">
+            <span id="logoText">金赞赞</span>
+        </div>
+        <div class="controls">
+            <select id="langSwitch" class="lang-switch" onchange="changeLanguage(this.value)">
+                <option value="zh">简体中文</option>
+                <option value="zh-tw">繁體中文</option>
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+                <option value="id">Bahasa Indonesia</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+                <option value="pt">Português</option>
+                <option value="vi">Tiếng Việt</option>
+            </select>
+            <button type="button" class="jump-link" onclick="window.print()" data-i18n="exportPdf" title="Save current language as 7-page PDF">导出 PDF</button>
+        </div>
+    </header>
 
-    <div class="hero">
-        <h1>金赞赞</h1>
-        <p>一款专注于实物黄金等贵金属的智能数据管理APP。提供全网实时行情、持仓盈亏分析与个性化的AI行情洞察。</p>
-        <a href="javascript:alert('APP iOS/Android 版本正在快马加鞭内测中，敬请期待！')" class="btn">⬇️ 立即下载体验</a>
-    </div>
+    <main>
+        <section class="page-intro">
+            <h1 data-i18n="introTitle">金赞赞｜智能实物贵金属资产管理</h1>
+            <p data-i18n="introDesc">实时行情、攒金记录、AI 金评与资产诊断，帮你把每一克金银都管理清楚。</p>
+        </section>
 
-    <div class="features">
-        <div class="feature-card">
-            <h3>实时行情</h3>
-            <p>对接全球权威贵金属市场，支持多币种与多克重毫秒级换算，随时掌握价格风向。</p>
-        </div>
-        <div class="feature-card">
-            <h3>资产管家</h3>
-            <p>多维度的资金盘点图表，买卖记录一手掌握，让财富盈亏一目了然。</p>
-        </div>
-        <div class="feature-card">
-            <h3>AI 洞察</h3>
-            <p>基于本地模型为您提供私人定制的交易参考与风险提示建议。</p>
-        </div>
-    </div>
+        <section class="deck" aria-label="App Store promotional slides">
+            <article class="promo-slide slide-hero" id="slide-1">
+                <div class="slide-copy">
+                    <div class="slide-kicker" data-i18n="heroKicker">智能贵金属资产管家</div>
+                    <h2 data-i18n="heroTitle">攒金攒银<br>一眼看清</h2>
+                    <p data-i18n="heroDesc">成本、市值、收益，自动汇总。</p>
+                </div>
+                <div class="device-stage">
+                    <figure class="iphone secondary tilt-left"><img data-img="assets_bottom" src="./home/assets_bottom.png" alt="Asset list bottom"></figure>
+                    <figure class="iphone large tilt-right"><img data-img="assets_top" src="./home/assets_top.png" alt="Asset tracking screen"></figure>
+                </div>
+            </article>
+
+            <article class="promo-slide slide-market" id="slide-2">
+                <div class="slide-copy">
+                    <div class="slide-kicker" data-i18n="marketKicker">实时行情</div>
+                    <h2 data-i18n="marketTitle">金价走势<br>随时掌握</h2>
+                    <p data-i18n="marketDesc">黄金、白银、铂金多品类行情，关键变化一屏呈现。</p>
+                </div>
+                <div class="device-stage">
+                    <figure class="iphone large"><img data-img="market" src="./home/market.png" alt="Market screen"></figure>
+                </div>
+            </article>
+
+            <article class="promo-slide slide-alert" id="slide-3">
+                <div class="slide-copy">
+                    <div class="slide-kicker" data-i18n="alertsKicker">价格提醒</div>
+                    <h2 data-i18n="alertsTitle">涨跌到价<br>马上提醒</h2>
+                    <p data-i18n="alertsDesc">设置关注价格，到价时第一时间通知你。</p>
+                </div>
+                <div class="device-stage">
+                    <figure class="iphone large tilt-left"><img data-img="price_alert" src="./home/price_alert.png" alt="Price alert screen"></figure>
+                </div>
+            </article>
+
+            <article class="promo-slide slide-ai" id="slide-4">
+                <div class="slide-copy">
+                    <div class="slide-kicker" data-i18n="aiKicker">AI 金评</div>
+                    <h2 data-i18n="aiTitle">每天一份<br>金市解读</h2>
+                    <p data-i18n="aiDesc">AI 每日生成金市速览，可继续追问展开。</p>
+                </div>
+                <div class="device-stage">
+                    <figure class="composite-graphic">
+                        <img src="./home/ai_review_to_advisor_flow_transparent.png" alt="AI Review to Advisor Flow">
+                    </figure>
+                </div>
+            </article>
+
+            <article class="promo-slide slide-insights" id="slide-5">
+                <div class="slide-copy">
+                    <div class="slide-kicker" data-i18n="insightsKicker">智能洞察</div>
+                    <h2 data-i18n="insightsTitle">你的金记录<br>一目了然</h2>
+                    <p data-i18n="insightsDesc">金评、购买回顾、价格走势——AI 帮你整理，一处查看。</p>
+                </div>
+                <div class="device-stage">
+                    <figure class="iphone large">
+                        <img src="./home/ai_diagnosis_synthesis_flow_2.png" alt="AI Diagnosis Synthesis Flow">
+                    </figure>
+                </div>
+            </article>
+
+            <article class="promo-slide slide-theme" id="slide-7">
+                <div class="slide-copy">
+                    <div class="slide-kicker" data-i18n="themeKicker">多款主题</div>
+                    <h2 data-i18n="themeTitle">你的账本<br>也要好看</h2>
+                    <p data-i18n="themeDesc">深色、明亮、卡通等主题，让攒金记录更有仪式感。</p>
+                </div>
+                <div class="device-stage">
+                    <figure class="iphone secondary tilt-left"><img data-img="theme_blue" src="./home/theme_blue.png" alt="Blue theme screen"></figure>
+                    <figure class="iphone large"><img data-img="theme_cartoon" src="./home/theme_cartoon.png" alt="Cartoon theme screen"></figure>
+                    <figure class="iphone secondary tilt-right"><img data-img="assets_bottom" src="./home/assets_bottom.png" alt="Assets screen"></figure>
+                </div>
+            </article>
+        </section>
+    </main>
 
     <footer>
-        <div class="links">
-            <a href="/privacy/zh">隐私政策(Privacy Policy)</a>
-            <a href="/terms/zh">用户协议(Terms of Service)</a>
+        <div data-i18n="footerDesc">为您打造更清晰的实物贵金属资产管理体验。</div>
+        <div class="footer-links">
+            <a href="privacy/zh.html" data-i18n="linkPrivacy">隐私政策</a>
+            <a href="terms/zh.html" data-i18n="linkTerms">服务条款</a>
         </div>
-        <p>© 2026 金赞赞. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        const i18n = {
+            zh: {
+                brandName: "金赞赞",
+                mockHeaderReview: "行情",
+                mockHeaderReport: "洞察",
+                mockChatHeader: "AI 金评助手",
+                mockTickerLive: "实时",
+                mockReviewCardTitle: "AI 金评",
+                mockReviewDiscuss: "讨论",
+                mockReportPanelTitle: "智能诊断记录",
+                mockReportAsset: "5 克 黄金",
+                mockReportAssetSub: "2025-12-15 购入",
+                mockReportSec1: "【购买详情】",
+                mockReportSec2: "【价格区间】",
+                exportPdf: "导出 PDF",
+                introTitle: "金赞赞｜智能实物贵金属资产管理",
+                introDesc: "实时行情、攒金记录、AI 金评与资产诊断，帮你把每一克金银都管理清楚。",
+                heroKicker: "智能贵金属资产管家",
+                heroTitle: "攒金攒银<br>一眼看清",
+                heroDesc: "成本、市值、收益，自动汇总。",
+                marketKicker: "实时行情",
+                marketTitle: "金价走势<br>随时掌握",
+                marketDesc: "黄金、白银、铂金多品类行情，关键变化一屏呈现。",
+                alertsKicker: "价格提醒",
+                alertsTitle: "涨跌到价<br>马上提醒",
+                alertsDesc: "设置关注价格，到价时第一时间通知你。",
+                aiKicker: "AI 金评",
+                aiTitle: "每天一份<br>金市解读",
+                aiDesc: "AI 每日生成金市速览，可继续追问展开。",
+                insightsKicker: "智能洞察",
+                insightsTitle: "AI 看懂<br>你的每一克",
+                insightsDesc: "金评、购买回顾、价格走势——一处查看。",
+                diagnosisKicker: "购买回顾",
+                diagnosisTitle: "你的金记录<br>一目了然",
+                diagnosisDesc: "从购买时间到当前价格，AI 帮你整理为简明回顾。",
+                themeKicker: "多款主题",
+                themeTitle: "你的账本<br>也要好看",
+                themeDesc: "深色、明亮、卡通等主题，让攒金记录更有仪式感。",
+                footerDesc: "为您打造更清晰的实物贵金属资产管理体验。",
+                hubSub: "AI 驱动 · 实时整合",
+                hubTitle: "一处看齐",
+                linkPrivacy: "隐私政策",
+                linkTerms: "服务条款",
+                insightsMeta: "AI 驱动 · 实时",
+            },
+            "zh-tw": {
+                brandName: "金讚讚",
+                mockHeaderReview: "行情",
+                mockHeaderReport: "洞察",
+                mockChatHeader: "AI 金評助手",
+                mockTickerLive: "即時",
+                mockReviewCardTitle: "AI 金評",
+                mockReviewDiscuss: "討論",
+                mockReportPanelTitle: "智慧診斷記錄",
+                mockReportAsset: "5 克 黃金",
+                mockReportAssetSub: "2025-12-15 購入",
+                mockReportSec1: "【購買詳情】",
+                mockReportSec2: "【價格區間】",
+                exportPdf: "匯出 PDF",
+                introTitle: "金讚讚｜智慧實物貴金屬資產管理",
+                introDesc: "即時行情、攢金記錄、AI 金評與資產診斷，幫你把每一克金銀都管理清楚。",
+                heroKicker: "智慧貴金屬資產管家",
+                heroTitle: "攢金攢銀<br>一眼看清",
+                heroDesc: "成本、市值、收益，自動彙總。",
+                marketKicker: "即時行情",
+                marketTitle: "金價走勢<br>隨時掌握",
+                marketDesc: "黃金、白銀、鉑金多品類行情，關鍵變化一屏呈現。",
+                alertsKicker: "價格提醒",
+                alertsTitle: "漲跌到價<br>馬上提醒",
+                alertsDesc: "設定關注價格，到價時第一時間通知你。",
+                aiKicker: "AI 金評",
+                aiTitle: "每天一份<br>金市解讀",
+                aiDesc: "AI 每日生成金市速覽，可繼續追問展開。",
+                insightsKicker: "智慧洞察",
+                insightsTitle: "AI 看懂<br>你的每一克",
+                insightsDesc: "金評、購買回顧、價格走勢——一處查看。",
+                diagnosisKicker: "購買回顧",
+                diagnosisTitle: "你的金記錄<br>一目了然",
+                diagnosisDesc: "從購買時間到當前價格，AI 幫你整理為簡明回顧。",
+                themeKicker: "多款主題",
+                themeTitle: "你的帳本<br>也要好看",
+                themeDesc: "深色、明亮、卡通等主題，讓攢金記錄更有儀式感。",
+                footerDesc: "為您打造更清晰的實物貴金屬資產管理體驗。",
+                hubSub: "AI 驅動 · 實時整合",
+                hubTitle: "一處看齊",
+                linkPrivacy: "隱私政策",
+                linkTerms: "服務條款",
+                insightsMeta: "AI 驅動 · 即時",
+            },
+            en: {
+                brandName: "Bullion Saver",
+                mockHeaderReview: "Market",
+                mockHeaderReport: "Insights",
+                mockChatHeader: "AI Assistant",
+                mockTickerLive: "Live",
+                mockReviewCardTitle: "AI Brief",
+                mockReviewDiscuss: "Discuss",
+                mockReportPanelTitle: "AI Recap",
+                mockReportAsset: "5 g Gold",
+                mockReportAssetSub: "Purchased 2025-12-15",
+                mockReportSec1: "[ Purchase ]",
+                mockReportSec2: "[ Price range ]",
+                exportPdf: "Export PDF",
+                introTitle: "Bullion Saver | Smart precious metals portfolio manager",
+                introDesc: "Track live prices, holdings, AI reviews, and portfolio health for every gram you own.",
+                heroKicker: "Smart bullion asset manager",
+                heroTitle: "Track gold<br>at a glance",
+                heroDesc: "Cost, value, profit. Auto-tracked.",
+                marketKicker: "Live market",
+                marketTitle: "Follow prices<br>in real time",
+                marketDesc: "Gold, silver, and platinum trends with key changes shown clearly.",
+                alertsKicker: "Price alerts",
+                alertsTitle: "Hit your price<br>without watching",
+                alertsDesc: "Set a price you watch — we'll ping you the moment it lands.",
+                aiKicker: "AI review",
+                aiTitle: "Daily gold<br>market brief",
+                aiDesc: "AI delivers a daily brief — keep asking to go deeper.",
+                insightsKicker: "Smart insights",
+                insightsTitle: "AI reads<br>every gram",
+                insightsDesc: "Reviews, purchase recaps, prices — all in one tab.",
+                diagnosisKicker: "Purchase recap",
+                diagnosisTitle: "Your gold log<br>at a glance",
+                diagnosisDesc: "From purchase date to today's price, AI shapes a clean recap.",
+                themeKicker: "Themes",
+                themeTitle: "Make tracking<br>feel personal",
+                themeDesc: "Dark, bright, and playful themes give every record a better home.",
+                footerDesc: "A clearer way to manage physical precious metal assets.",
+                hubSub: "AI-powered · Live",
+                hubTitle: "All in one tab",
+                linkPrivacy: "Privacy Policy",
+                linkTerms: "Terms of Service",
+                insightsMeta: "AI-powered · Live",
+            },
+            ar: {
+                brandName: "Bullion Saver",
+                mockHeaderReview: "السوق",
+                mockHeaderReport: "الرؤى",
+                mockChatHeader: "مساعد AI",
+                mockTickerLive: "مباشر",
+                mockReviewCardTitle: "ملخص AI",
+                mockReviewDiscuss: "نقاش",
+                mockReportPanelTitle: "تلخيص AI",
+                mockReportAsset: "5 جم ذهب",
+                mockReportAssetSub: "اشتُري 2025-12-15",
+                mockReportSec1: "【الشراء】",
+                mockReportSec2: "【نطاق السعر】",
+                exportPdf: "تصدير PDF",
+                introTitle: "Bullion Saver | إدارة ذكية لأصول المعادن النفيسة",
+                introDesc: "أسعار لحظية وسجل ادخار ومراجعات AI وتشخيص للمحفظة — كل غرام تحت السيطرة.",
+                heroKicker: "مدير ذكي للمعادن النفيسة",
+                heroTitle: "ذهب وفضة<br>في لمحة",
+                heroDesc: "التكلفة، القيمة، الربح. تلقائياً.",
+                marketKicker: "السوق المباشر",
+                marketTitle: "تابع الأسعار<br>لحظة بلحظة",
+                marketDesc: "اتجاهات الذهب والفضة والبلاتين مع التغييرات الرئيسية بوضوح.",
+                alertsKicker: "تنبيهات الأسعار",
+                alertsTitle: "اضبط هدفك<br>دعنا نتابع",
+                alertsDesc: "حدد سعراً تراقبه، وسنُخطرك فور الوصول إليه.",
+                aiKicker: "مراجعة AI",
+                aiTitle: "ملخص يومي<br>لسوق الذهب",
+                aiDesc: "يلخص الذكاء الاصطناعي الإشارات لتفهم تحركات اليوم بسرعة.",
+                insightsKicker: "رؤى ذكية",
+                insightsTitle: "AI يفهم<br>كل غرام",
+                insightsDesc: "مراجعات وسجل المشتريات وأسعار — في علامة تبويب واحدة.",
+                diagnosisKicker: "مراجعة المشتريات",
+                diagnosisTitle: "سجل ذهبك<br>في لمحة",
+                diagnosisDesc: "من تاريخ الشراء إلى السعر الحالي، يصوغ الذكاء الاصطناعي ملخصاً واضحاً.",
+                themeKicker: "السمات",
+                themeTitle: "اجعل التتبع<br>مظهراً شخصياً",
+                themeDesc: "سمات داكنة وفاتحة ومرحة لكل سجل.",
+                footerDesc: "طريقة أوضح لإدارة المعادن النفيسة الفعلية.",
+                hubSub: "بدعم الذكاء الاصطناعي",
+                hubTitle: "كل شيء في علامة واحدة",
+                linkPrivacy: "سياسة الخصوصية",
+                linkTerms: "شروط الخدمة",
+                insightsMeta: "بدعم AI · لحظي",
+            },
+            id: {
+                brandName: "Bullion Saver",
+                mockHeaderReview: "Pasar",
+                mockHeaderReport: "Wawasan",
+                mockChatHeader: "Asisten AI",
+                mockTickerLive: "Langsung",
+                mockReviewCardTitle: "Ringkasan AI",
+                mockReviewDiscuss: "Diskusi",
+                mockReportPanelTitle: "Rekap AI",
+                mockReportAsset: "5 g Emas",
+                mockReportAssetSub: "Dibeli 2025-12-15",
+                mockReportSec1: "[ Pembelian ]",
+                mockReportSec2: "[ Rentang harga ]",
+                exportPdf: "Ekspor PDF",
+                introTitle: "Bullion Saver | Manajemen aset logam mulia cerdas",
+                introDesc: "Harga real-time, catatan, ulasan AI, dan diagnosis — kelola setiap gram dengan jelas.",
+                heroKicker: "Manajer aset logam mulia",
+                heroTitle: "Emas & perak<br>dalam sekejap",
+                heroDesc: "Biaya, nilai, keuntungan. Otomatis.",
+                marketKicker: "Pasar real-time",
+                marketTitle: "Pantau harga<br>secara langsung",
+                marketDesc: "Tren emas, perak, dan platina dengan perubahan kunci yang jelas.",
+                alertsKicker: "Peringatan harga",
+                alertsTitle: "Capai harga<br>tanpa memantau",
+                alertsDesc: "Tentukan harga yang Anda pantau — kami beritahu saat tercapai.",
+                aiKicker: "Ulasan AI",
+                aiTitle: "Ringkasan harian<br>pasar emas",
+                aiDesc: "Ringkasan harian dari AI — tanyakan lebih lanjut untuk mendalami.",
+                insightsKicker: "Wawasan cerdas",
+                insightsTitle: "AI memahami<br>setiap gram",
+                insightsDesc: "Ulasan, tinjauan pembelian, dan harga — dalam satu tab.",
+                diagnosisKicker: "Tinjauan pembelian",
+                diagnosisTitle: "Catatan emas<br>sekilas",
+                diagnosisDesc: "Dari tanggal beli hingga harga kini, AI menyusunnya jadi ringkasan jelas.",
+                themeKicker: "Tema",
+                themeTitle: "Pencatatan<br>terasa personal",
+                themeDesc: "Tema gelap, terang, dan playful untuk setiap catatan.",
+                footerDesc: "Cara lebih jelas mengelola aset logam mulia fisik.",
+                hubSub: "Didukung AI · Langsung",
+                hubTitle: "Semua dalam satu tab",
+                linkPrivacy: "Kebijakan Privasi",
+                linkTerms: "Ketentuan Layanan",
+                insightsMeta: "Didukung AI · Real-time",
+            },
+            ja: {
+                brandName: "Bullion Saver",
+                mockHeaderReview: "相場",
+                mockHeaderReport: "インサイト",
+                mockChatHeader: "AI アシスタント",
+                mockTickerLive: "ライブ",
+                mockReviewCardTitle: "AI 金評",
+                mockReviewDiscuss: "議論",
+                mockReportPanelTitle: "AI まとめ",
+                mockReportAsset: "5 g ゴールド",
+                mockReportAssetSub: "2025-12-15 購入",
+                mockReportSec1: "【購入詳細】",
+                mockReportSec2: "【価格レンジ】",
+                exportPdf: "PDF 書き出し",
+                introTitle: "Bullion Saver｜スマートな貴金属資産管理",
+                introDesc: "リアルタイム相場、貯金記録、AI 金評、資産診断 — すべての金銀を整理。",
+                heroKicker: "スマート貴金属資産マネージャー",
+                heroTitle: "金も銀も<br>一目瞭然",
+                heroDesc: "原価・時価・収益、自動で整理。",
+                marketKicker: "リアルタイム相場",
+                marketTitle: "金価格を<br>常にキャッチ",
+                marketDesc: "金・銀・プラチナなど複数銘柄を一画面で。",
+                alertsKicker: "価格アラート",
+                alertsTitle: "目標価格に<br>瞬時にお知らせ",
+                alertsDesc: "気になる価格を設定 — 到達した瞬間にお知らせ。",
+                aiKicker: "AI 金評",
+                aiTitle: "毎日届く<br>マーケット解説",
+                aiDesc: "AI が毎日のブリーフを作成、追加質問でさらに深掘り。",
+                insightsKicker: "スマートインサイト",
+                insightsTitle: "AI が読み解く<br>あなたの 1 グラム",
+                insightsDesc: "金評・購入履歴まとめ・価格をひとつのタブで。",
+                diagnosisKicker: "購入履歴まとめ",
+                diagnosisTitle: "あなたの金記録<br>ひと目で",
+                diagnosisDesc: "購入日から現在の価格まで、AI がわかりやすい振り返りに整理。",
+                themeKicker: "テーマ",
+                themeTitle: "記録までも<br>美しく",
+                themeDesc: "ダーク・ライト・カートゥーンで貯金が楽しくなる。",
+                footerDesc: "実物貴金属の資産管理を、もっとクリアに。",
+                hubSub: "AI 駆動 · リアルタイム",
+                hubTitle: "ひとつのタブで",
+                linkPrivacy: "プライバシーポリシー",
+                linkTerms: "利用規約",
+                insightsMeta: "AI 搭載 · リアルタイム",
+            },
+            ko: {
+                brandName: "Bullion Saver",
+                mockHeaderReview: "시세",
+                mockHeaderReport: "인사이트",
+                mockChatHeader: "AI 비서",
+                mockTickerLive: "실시간",
+                mockReviewCardTitle: "AI 브리핑",
+                mockReviewDiscuss: "대화",
+                mockReportPanelTitle: "AI 요약",
+                mockReportAsset: "5 g 골드",
+                mockReportAssetSub: "2025-12-15 구매",
+                mockReportSec1: "[ 구매 ]",
+                mockReportSec2: "[ 가격 범위 ]",
+                exportPdf: "PDF 내보내기",
+                introTitle: "Bullion Saver｜스마트한 귀금속 자산 관리",
+                introDesc: "실시간 시세, 적립 기록, AI 리뷰, 자산 진단 — 모든 그램을 정리하세요.",
+                heroKicker: "스마트 귀금속 자산 매니저",
+                heroTitle: "금 · 은<br>한눈에",
+                heroDesc: "원가, 평가액, 수익. 자동 정리.",
+                marketKicker: "실시간 시세",
+                marketTitle: "금값 흐름<br>언제든지",
+                marketDesc: "금 · 은 · 백금 등 다양한 품목을 한 화면에.",
+                alertsKicker: "가격 알림",
+                alertsTitle: "목표가에<br>바로 알림",
+                alertsDesc: "관심 가격을 설정하세요 — 도달 즉시 알려드립니다.",
+                aiKicker: "AI 리뷰",
+                aiTitle: "매일 받는<br>금 시장 해설",
+                aiDesc: "AI의 데일리 브리핑 — 추가 질문으로 더 깊게 파고들기.",
+                insightsKicker: "스마트 인사이트",
+                insightsTitle: "AI가 읽어내는<br>당신의 1 그램",
+                insightsDesc: "리뷰, 구매 정리, 가격을 한 탭에서.",
+                diagnosisKicker: "구매 기록 정리",
+                diagnosisTitle: "당신의 금 기록<br>한눈에",
+                diagnosisDesc: "구매일부터 현재 가격까지, AI가 깔끔한 요약으로 정리합니다.",
+                themeKicker: "테마",
+                themeTitle: "기록조차<br>아름답게",
+                themeDesc: "다크 · 라이트 · 카툰으로 적립이 즐거워집니다.",
+                footerDesc: "실물 귀금속 자산 관리를 더 명확하게.",
+                hubSub: "AI 기반 · 실시간",
+                hubTitle: "한 탭에 모두",
+                linkPrivacy: "개인정보 처리방침",
+                linkTerms: "이용약관",
+                insightsMeta: "AI 기반 · 실시간",
+            },
+            pt: {
+                brandName: "Bullion Saver",
+                mockHeaderReview: "Mercado",
+                mockHeaderReport: "Insights",
+                mockChatHeader: "Assistente IA",
+                mockTickerLive: "Ao vivo",
+                mockReviewCardTitle: "Resumo IA",
+                mockReviewDiscuss: "Discutir",
+                mockReportPanelTitle: "Resumo IA",
+                mockReportAsset: "5 g Ouro",
+                mockReportAssetSub: "Comprado 2025-12-15",
+                mockReportSec1: "[ Compra ]",
+                mockReportSec2: "[ Faixa de preço ]",
+                exportPdf: "Exportar PDF",
+                introTitle: "Bullion Saver | Gestão inteligente de metais preciosos",
+                introDesc: "Cotações ao vivo, registros, análise por IA e diagnóstico — cada grama sob controle.",
+                heroKicker: "Gestor inteligente de metais",
+                heroTitle: "Ouro e prata<br>num relance",
+                heroDesc: "Custo, valor, lucro. Tudo automático.",
+                marketKicker: "Mercado ao vivo",
+                marketTitle: "Acompanhe<br>em tempo real",
+                marketDesc: "Tendências de ouro, prata e platina com mudanças destacadas.",
+                alertsKicker: "Alertas de preço",
+                alertsTitle: "Atinja o preço<br>sem ficar olhando",
+                alertsDesc: "Defina o preço que acompanha — avisamos no instante em que chega lá.",
+                aiKicker: "Análise por IA",
+                aiTitle: "Resumo diário<br>do mercado",
+                aiDesc: "Resumo diário da IA — pergunte mais para se aprofundar.",
+                insightsKicker: "Insights",
+                insightsTitle: "IA entende<br>cada grama",
+                insightsDesc: "Análises, registros, preços em uma só aba.",
+                diagnosisKicker: "Revisão de compras",
+                diagnosisTitle: "Seu registro<br>num relance",
+                diagnosisDesc: "Da data da compra ao preço atual, a IA organiza um resumo claro.",
+                themeKicker: "Temas",
+                themeTitle: "Registre<br>com estilo",
+                themeDesc: "Temas escuros, claros e divertidos para cada registro.",
+                footerDesc: "Uma maneira mais clara de gerenciar metais preciosos físicos.",
+                hubSub: "Por IA · Em tempo real",
+                hubTitle: "Tudo numa só aba",
+                linkPrivacy: "Política de Privacidade",
+                linkTerms: "Termos de Serviço",
+                insightsMeta: "Com IA · Tempo real",
+            },
+            vi: {
+                brandName: "Bullion Saver",
+                mockHeaderReview: "Thị trường",
+                mockHeaderReport: "Phân tích",
+                mockChatHeader: "Trợ lý AI",
+                mockTickerLive: "Trực tiếp",
+                mockReviewCardTitle: "Tóm tắt AI",
+                mockReviewDiscuss: "Trao đổi",
+                mockReportPanelTitle: "Tóm tắt AI",
+                mockReportAsset: "5 g Vàng",
+                mockReportAssetSub: "Mua 2025-12-15",
+                mockReportSec1: "[ Mua ]",
+                mockReportSec2: "[ Khoảng giá ]",
+                exportPdf: "Xuất PDF",
+                introTitle: "Bullion Saver | Quản lý kim loại quý thông minh",
+                introDesc: "Giá thời gian thực, sổ tích lũy, đánh giá AI và chẩn đoán — quản lý từng gram rõ ràng.",
+                heroKicker: "Quản lý kim loại quý thông minh",
+                heroTitle: "Vàng & bạc<br>trong tầm tay",
+                heroDesc: "Chi phí, giá trị, lợi nhuận. Tự động.",
+                marketKicker: "Thị trường trực tiếp",
+                marketTitle: "Theo dõi giá<br>thời gian thực",
+                marketDesc: "Xu hướng vàng, bạc, bạch kim cùng biến động chính trên một màn hình.",
+                alertsKicker: "Cảnh báo giá",
+                alertsTitle: "Đạt mức giá<br>không cần theo dõi",
+                alertsDesc: "Đặt mức giá bạn quan tâm — chúng tôi báo ngay khi đạt tới.",
+                aiKicker: "Đánh giá AI",
+                aiTitle: "Tóm tắt hàng ngày<br>thị trường vàng",
+                aiDesc: "Tóm tắt hàng ngày từ AI — hỏi tiếp để đi sâu hơn.",
+                insightsKicker: "Phân tích thông minh",
+                insightsTitle: "AI hiểu<br>từng gram của bạn",
+                insightsDesc: "Đánh giá, hồ sơ mua, giá — trong một tab.",
+                diagnosisKicker: "Xem lại giao dịch",
+                diagnosisTitle: "Hồ sơ vàng<br>của bạn",
+                diagnosisDesc: "Từ ngày mua đến giá hiện tại, AI sắp xếp thành bản tóm tắt rõ ràng.",
+                themeKicker: "Giao diện",
+                themeTitle: "Ghi chép<br>cũng phải đẹp",
+                themeDesc: "Giao diện tối, sáng và vui nhộn cho mọi sổ tích lũy.",
+                footerDesc: "Cách rõ ràng hơn để quản lý kim loại quý vật lý.",
+                hubSub: "Bằng AI · Thời gian thực",
+                hubTitle: "Tất cả trong một tab",
+                linkPrivacy: "Chính sách bảo mật",
+                linkTerms: "Điều khoản dịch vụ",
+                insightsMeta: "Hỗ trợ AI · Thời gian thực",
+            }
+        };
+
+        const localizedBrandNames = {
+            zh: "金赞赞",
+            "zh-tw": "金讚讚",
+            en: "Bullion Saver",
+            ar: "Bullion Saver",
+            id: "Bullion Saver",
+            ja: "Bullion Saver",
+            ko: "Bullion Saver",
+            pt: "Bullion Saver",
+            vi: "Bullion Saver"
+        };
+
+        const imageSuffixesByLanguage = {
+            // English: use the unsuffixed default PNGs (all in English locale,
+            // dark/gold theme). The `_en_white_alt` files are cartoon-theme
+            // variants meant only for the Theme slide showcase, not for
+            // general feature slides — including them in this priority list
+            // led to inconsistent themes across slides.
+            en: [''],
+            zh: ['_zh'],
+            'zh-tw': ['_zh-tw'],
+            ar: ['_ar'],
+            id: ['_id'],
+            ja: ['_ja'],
+            ko: ['_ko', '_ko_alt'],
+            pt: ['_pt'],
+            vi: ['_vi', '_vi_alt']
+        };
+
+        function getLocalizedImageSources(baseName, lang) {
+            const addCandidates = (suffixes) => suffixes.flatMap(suffix => [
+                `./home/${baseName}${suffix}.png`,
+                `./home/${baseName}${suffix}.jpg`
+            ]);
+
+            const exactLanguage = addCandidates(imageSuffixesByLanguage[lang] || []);
+            const englishFallback = lang === 'en' ? [] : addCandidates(imageSuffixesByLanguage.en);
+            const defaultFallback = addCandidates(['']);
+
+            return [...new Set([
+                ...exactLanguage,
+                ...englishFallback,
+                ...defaultFallback
+            ])];
+        }
+
+        window.getLocalizedImageSources = getLocalizedImageSources;
+
+        function changeLanguage(lang) {
+            const data = i18n[lang] || i18n.en;
+            const brandName = localizedBrandNames[lang] || localizedBrandNames.en;
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (key === 'brandName') {
+                    el.innerHTML = brandName;
+                } else if (data[key]) {
+                    el.innerHTML = data[key];
+                }
+            });
+
+            document.getElementById('logoText').textContent = brandName;
+            document.title = `${brandName} - App Store Promo Canvas`;
+
+            document.querySelectorAll('img[data-img]').forEach(img => {
+                const baseName = img.getAttribute('data-img');
+                const sources = getLocalizedImageSources(baseName, lang);
+
+                const tryLoad = (index) => {
+                    if (index >= sources.length) return;
+                    const testImg = new Image();
+                    testImg.onload = () => { img.src = sources[index]; };
+                    testImg.onerror = () => { tryLoad(index + 1); };
+                    testImg.src = sources[index];
+                };
+
+                tryLoad(0);
+            });
+
+            document.documentElement.lang = lang === 'zh-tw' ? 'zh-Hant' : lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+            document.querySelectorAll('.footer-links a').forEach(a => {
+                a.href = a.href.replace(/([\\/])[a-z-]+\.html$/, '$1' + lang + '.html');
+            });
+        }
+
+        changeLanguage('zh');
+    </script>
 </body>
 </html>
