@@ -212,16 +212,16 @@
         .slide-kicker {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            min-height: 48px;
-            margin-bottom: 16px;
-            padding: 0 20px;
+            gap: 14px;
+            min-height: 56px;
+            margin-bottom: 20px;
+            padding: 0 24px;
             border: 1px solid var(--glass-border);
             border-radius: 999px;
             background: var(--glass-bg);
             backdrop-filter: blur(20px);
             color: var(--ink);
-            font-size: clamp(18px, 3vw, 24px); /* Slightly smaller than h2 */
+            font-size: clamp(22px, 4vw, 28px); /* One size larger */
             font-weight: 800;
             letter-spacing: 0.04em;
             text-transform: uppercase;
@@ -230,13 +230,13 @@
 
         .slide-kicker::before {
             content: "";
-            width: 14px;
-            height: 14px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
             background: var(--kicker-dot, var(--gold));
             box-shadow:
-                0 0 0 5px var(--kicker-halo, rgba(201,149,47,0.28)),
-                0 0 0 10px rgba(0,0,0,0.06);
+                0 0 0 6px var(--kicker-halo, rgba(201,149,47,0.28)),
+                0 0 0 12px rgba(0,0,0,0.06);
         }
 
         /* Per-slide dot color anchoring each slide to its gradient identity */
@@ -504,10 +504,10 @@
             }
 
             .slide-kicker {
-                min-height: 44px;
-                padding: 0 20px;
-                margin-bottom: 20px;
-                font-size: 20px;
+                min-height: 52px;
+                padding: 0 24px;
+                margin-bottom: 24px;
+                font-size: 24px;
             }
 
             .slide-copy h2 {
