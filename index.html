@@ -6,20 +6,20 @@
     <title>金赞赞 - App Store 宣传图画布</title>
     <style>
         :root {
-            --ink: #fffaf0;
-            --paper: #0a0a0c;
-            --paper-soft: #121214;
-            --gold: #c9952f;
+            --ink: #1c1a17;
+            --paper: #faf9f5;
+            --paper-soft: #f2f0e9;
+            --gold: #b8862e;
             --gold-deep: #7a4f12;
-            --green: #258f72;
-            --blue: #3d72a8;
-            --plum: #8e557b;
+            --green: #1d6b55;
+            --blue: #244c74;
+            --plum: #6a405c;
             --black: #050505;
-            --white: #121214;
-            --muted: rgba(255, 250, 240, 0.68);
-            --shadow: 0 44px 100px rgba(0, 0, 0, 0.5);
-            --glass-bg: rgba(20, 20, 24, 0.65);
-            --glass-border: rgba(255, 255, 255, 0.08);
+            --white: #ffffff;
+            --muted: rgba(28, 26, 23, 0.68);
+            --shadow: 0 44px 100px rgba(0, 0, 0, 0.15);
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(0, 0, 0, 0.06);
         }
 
         * { box-sizing: border-box; }
@@ -48,8 +48,8 @@
             position: fixed;
             inset: 0;
             pointer-events: none;
-            background: radial-gradient(circle at top right, rgba(122,79,18,0.15), transparent 40%),
-                        radial-gradient(circle at bottom left, rgba(36,76,116,0.15), transparent 50%);
+            background: radial-gradient(circle at top right, rgba(122,79,18,0.06), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(36,76,116,0.06), transparent 50%);
             z-index: -1;
         }
 
@@ -64,11 +64,11 @@
             justify-content: space-between;
             gap: 20px;
             padding: 18px clamp(18px, 4vw, 48px);
-            background: rgba(10, 10, 12, 0.7);
+            background: rgba(250, 249, 245, 0.7);
             border-bottom: 1px solid var(--glass-border);
             backdrop-filter: saturate(180%) blur(24px);
             -webkit-backdrop-filter: saturate(180%) blur(24px);
-            box-shadow: 0 12px 30px -20px rgba(0,0,0,0.5);
+            box-shadow: 0 12px 30px -20px rgba(0,0,0,0.15);
         }
 
         .brand {
@@ -176,9 +176,9 @@
             inset: 0;
             z-index: -2;
             background:
-                radial-gradient(circle at 50% 12%, rgba(255,255,255,0.08), transparent 48%),
-                radial-gradient(circle at 50% 90%, rgba(0,0,0,0.4), transparent 50%),
-                var(--slide-bg, linear-gradient(135deg, #1f1b13, #3a2a11));
+                radial-gradient(circle at 50% 12%, rgba(255,255,255,0.8), transparent 48%),
+                radial-gradient(circle at 50% 90%, rgba(250,249,245,0.4), transparent 50%),
+                var(--slide-bg, linear-gradient(135deg, #f9f4ea, #efe1c8));
         }
 
         .promo-slide::after {
@@ -187,16 +187,16 @@
             inset: auto 0 0 0;
             height: 28%;
             z-index: -1;
-            background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0));
+            background: linear-gradient(0deg, rgba(250,249,245,1), rgba(250,249,245,0));
         }
 
-        .slide-hero { --slide-bg: linear-gradient(135deg, #1c150c 0%, #30220c 54%, #0a0a0c 100%); }
-        .slide-market { --slide-bg: linear-gradient(135deg, #101c18 0%, #15382b 54%, #0a0a0c 100%); }
-        .slide-alert { --slide-bg: linear-gradient(135deg, #1f170b 0%, #4a2c06 55%, #0a0a0c 100%); }
-        .slide-ai { --slide-bg: linear-gradient(135deg, #101924 0%, #17324c 54%, #0a0a0c 100%); }
-        .slide-insights { --slide-bg: linear-gradient(135deg, #131518 0%, #202732 54%, #0a0a0c 100%); }
-        .slide-diagnosis { --slide-bg: linear-gradient(135deg, #241620 0%, #3b1d30 56%, #0a0a0c 100%); }
-        .slide-theme { --slide-bg: linear-gradient(135deg, #181524 0%, #291e42 50%, #0a0a0c 100%); }
+        .slide-hero { --slide-bg: linear-gradient(135deg, #fdfbf7 0%, #f4ebd8 54%, #faf9f5 100%); }
+        .slide-market { --slide-bg: linear-gradient(135deg, #f2f7f5 0%, #d8eae2 54%, #faf9f5 100%); }
+        .slide-alert { --slide-bg: linear-gradient(135deg, #fdfbf7 0%, #e8d7be 55%, #faf9f5 100%); }
+        .slide-ai { --slide-bg: linear-gradient(135deg, #f2f6fa 0%, #d5e2f0 54%, #faf9f5 100%); }
+        .slide-insights { --slide-bg: linear-gradient(135deg, #f5f6f8 0%, #e0e5eb 54%, #faf9f5 100%); }
+        .slide-diagnosis { --slide-bg: linear-gradient(135deg, #fbf7fa 0%, #ebdced 56%, #faf9f5 100%); }
+        .slide-theme { --slide-bg: linear-gradient(135deg, #f7f6f9 0%, #e3dcf0 50%, #faf9f5 100%); }
 
         .slide-copy {
             display: flex;
@@ -290,10 +290,10 @@
             /* Premium metallic gold gradient for the phone bezel */
             background: linear-gradient(135deg, #fceb98 0%, #b8862e 15%, #2a1c0d 45%, #110b05 65%, #c9952f 85%, #fceb98 100%);
             box-shadow:
-                inset 0 0 0 1px rgba(255,255,255,0.4),
-                inset 0 0 0 2px rgba(0,0,0,0.8),
-                0 42px 90px rgba(0, 0, 0, 0.8),
-                0 0 40px rgba(201,149,47,0.15); /* Soft gold ambient glow */
+                inset 0 0 0 1px rgba(255,255,255,0.8),
+                inset 0 0 0 2px rgba(0,0,0,0.1),
+                0 42px 90px rgba(0, 0, 0, 0.15),
+                0 0 40px rgba(201,149,47,0.05); /* Soft gold ambient glow */
             transform: translateZ(0);
             animation: float 6s ease-in-out infinite;
         }
@@ -357,7 +357,7 @@
             border-radius: 46px;
             object-fit: cover;
             object-position: top;
-            background: #111;
+            background: #fff;
             /* High-quality downscaling for @3x retina phone screenshots
                (1179x2556 -> ~410px). Browser default bilinear introduces
                aliasing on thin design strokes (e.g. the gold trend-wave on
@@ -555,7 +555,7 @@
             -webkit-backdrop-filter: blur(24px) saturate(180%);
             border-radius: 12px;
             color: var(--ink);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255,255,255,0.6);
             animation: float 6s ease-in-out infinite reverse;
         }
 
@@ -569,7 +569,7 @@
             line-height: 1;
             color: var(--gold);
             font-weight: 700;
-            text-shadow: 0 4px 20px rgba(201,149,47,0.4);
+            text-shadow: 0 4px 20px rgba(201,149,47,0.15);
         }
 
         .ai-quote-card .quote {
@@ -587,7 +587,7 @@
             font-size: 11px;
             font-weight: 800;
             letter-spacing: 0.08em;
-            color: rgba(255, 250, 240, 0.6);
+            color: rgba(28, 26, 23, 0.6);
         }
 
         .slide-ai .ai-quote-card {
@@ -735,15 +735,11 @@
             width: 100%;
             height: auto;
             object-fit: contain;
-            mix-blend-mode: screen;
-            filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.4));
+            mix-blend-mode: normal;
+            filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.15));
         }
 
-        /* Adjustments for Slide 4 (AI Review) Image */
-        .slide-ai .composite-graphic img {
-            transform: scale(1.15) translateY(10px); /* Reduced scale from 1.6 */
-            transform-origin: center top;
-        }
+
 
         /* Adjustments for Slide 5 (AI Diagnosis) Image - Standard Phone Frame */
         .slide-insights .iphone img {
