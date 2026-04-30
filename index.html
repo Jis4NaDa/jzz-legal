@@ -228,6 +228,13 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.3);
         }
 
+        /* Specifically enlarge Chinese kicker text */
+        [lang^="zh"] .slide-kicker {
+            font-size: clamp(26px, 4.5vw, 32px);
+            min-height: 64px;
+            padding: 0 28px;
+        }
+
         .slide-kicker::before {
             content: "";
             width: 16px;
@@ -508,6 +515,12 @@
                 padding: 0 24px;
                 margin-bottom: 24px;
                 font-size: 24px;
+            }
+
+            [lang^="zh"] .slide-kicker {
+                min-height: 60px;
+                padding: 0 28px;
+                font-size: 28px;
             }
 
             .slide-copy h2 {
